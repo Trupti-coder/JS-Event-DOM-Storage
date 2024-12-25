@@ -19,6 +19,9 @@
 
     <script>
 
+        var ul1=document.getElementById("ul1");
+        ul1.addEventListener("click",funClick.false);
+
         var btn1=document.getElementById("btnAdd");
         btn1.addEventListener("click",funAdd,false);
 
@@ -32,17 +35,19 @@
 
         function funAdd(){
 
-        
             let txtName=document.getElementById("txtId").value;
             let txtPrice=document.getElementById("txtPrice").value;
             //var obj={prodName:txtName,prodPrice:txtPrice};
             var obj=new Product(txtName,txtPrice)
             list.push(obj);
+        }
 
-            
+        function funDisplay(){
 
-            
-
+            var str='';
+            for(let i=0;i<list.length;i++){
+                var str="<li>"+list[i].productName+"*"+list[i].productPrice+"</li>"
+            }
 
         }
     </script>
