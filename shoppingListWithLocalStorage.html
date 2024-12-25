@@ -67,6 +67,37 @@
 
 
         }
+
+        function funDelete(){
+           var txtName=document.getElementById("txtName").value;
+
+           for(let i=0;i<list.length;i++){
+            if(list[i].productName==txtName){
+                list.splice(i,1);
+                break;
+            }
+           }
+
+           funDisplay();
+
+
+        }
+
+        function funUpdate(){
+            let txtName=document.getElementById("txtName").value;
+            let newPrice=document.getElementById("txtPrice").value;
+
+            for(let i=0;i<list.length;i++){
+                if(list[i].productName===txtName){
+                    list[i].productPrice=newPrice
+                }
+            }
+            document.getElementById("txtName").value="";
+            document.getElementById("txtPrice").value="";
+            document.getElementById("txtName").ReadOnly=false;
+
+            funDisplay();
+        }
     </script>
 
 </body>
