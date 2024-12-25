@@ -19,8 +19,8 @@
 
     <script>
 
-        var ul1=document.getElementById("ul1");
-        ul1.addEventListener("click",funClick.false);
+        var ul=document.getElementById("ul1");
+        ul.addEventListener("click",funClick,false);
 
         var btn1=document.getElementById("btnAdd");
         btn1.addEventListener("click",funAdd,false);
@@ -53,12 +53,18 @@
             for(let i=0;i<list.length;i++){
                  str+="<li>"+list[i].productName+"*"+list[i].productPrice+"</li>"
             }
-            ul1.innerHTML=str;
+            ul.innerHTML=str;
 
         }
 
-        function funClick(){
-            
+        function funClick(event){
+            var str=event.target.textContent;
+            console.log(str);
+            var arr=str.split("*");
+            document.getElementById("txtName").value=arr[0];
+            document.getElementById("txtPrice").value=arr[1];
+            document.getElementById("txtName").ReadOnly=true;
+
 
         }
     </script>
