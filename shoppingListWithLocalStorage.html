@@ -17,7 +17,35 @@
     <ul id="ul1"></ul>
     <div id="div1"></div>
 
-    <script src="script.js"></script>
+    <script>
+
+        var btn1=document.getElementById("btnAdd");
+        btn1.addEventListener("click",funAdd,false);
+
+        var list=new Array(); 
+
+        function Product(name,price){
+            this.productName=name,
+            this.productPrice=price
+        }
+
+
+        function funAdd(){
+
+        
+            let txtName=document.getElementById("txtId").value;
+            let txtPrice=document.getElementById("txtPrice").value;
+            //var obj={prodName:txtName,prodPrice:txtPrice};
+            var obj=new Product(txtName,txtPrice)
+            list.push(obj);
+
+            
+
+            
+
+
+        }
+    </script>
 
 </body>
 </html>
