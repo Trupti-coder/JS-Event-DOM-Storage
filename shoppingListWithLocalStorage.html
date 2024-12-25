@@ -7,7 +7,7 @@
 </head>
 <body>
     
-    productName:<input type="text" id="txtId"><br><br>
+    productName:<input type="text" id="txtName"><br><br>
     productPrice:<input type="text" id="txtPrice"><br><br>
 
     <input type="button" value="Add" id="btnAdd">
@@ -35,19 +35,30 @@
 
         function funAdd(){
 
-            let txtName=document.getElementById("txtId").value;
+            let txtName=document.getElementById("txtName").value;
             let txtPrice=document.getElementById("txtPrice").value;
             //var obj={prodName:txtName,prodPrice:txtPrice};
             var obj=new Product(txtName,txtPrice)
             list.push(obj);
+
+            document.getElementById("txtName").value="";
+            document.getElementById("txtPrice").value="";
+
+            funDisplay();
         }
 
         function funDisplay(){
 
             var str='';
             for(let i=0;i<list.length;i++){
-                var str="<li>"+list[i].productName+"*"+list[i].productPrice+"</li>"
+                 str+="<li>"+list[i].productName+"*"+list[i].productPrice+"</li>"
             }
+            ul1.innerHTML=str;
+
+        }
+
+        function funClick(){
+            
 
         }
     </script>
