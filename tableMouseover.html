@@ -39,8 +39,19 @@
         }
 
        
-        
-        function funOver(){
+        var div=document.querySelector("div")
+
+        function funOver(event){
+            var tr=event.target.parentNode
+            let tdArr=tr.children;
+            var st="";
+           for(let i=0;i<arr.length;i++){
+            if(tdArr[0].textContent==arr[i].rollNo){
+                st+="<br>rollNo="+arr[i].rollNo+"<br>name="+arr[i].name+"<br>marks="+arr[i].marks+"<br>city="+arr[i].city;
+            }
+           }
+
+           div.innerHTML=st;
 
         }
 
