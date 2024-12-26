@@ -6,6 +6,41 @@
     <title>Table Mouseover </title>
 </head>
 <body>
+    <table id="tbl1" border="2"></table>
+    <div id="div1"></div>
+
+    <script>
+        var arr=[{rollNo:1,name:"Trupti",marks:60,city:"Pune"},
+        {rollNo:2,name:"Swara",marks:90,city:"Mumbai"},
+        {rollNo:3,name:"Divya",marks:40,city:"Delhi"},
+        {rollNo:4,name:"Bhakti",marks:85,city:"Nashik"},
+            
+        ]
+
+        var tb1=document.getElementById("tbl1");
+        tb1.addEventListener("mouseover",funOver,false);
+
+        window.onload=Display();
+        function Display(){
+            
+            var str="<tr><td>rollNo</td><td>name</td><td onclick='funMarks()'>Marks</td><td>City<td></tr>"
+            for(let i=0;i<arr.length;i++){
+                str+="<tr><td>"+arr[i].rollNo+"</td><td>"+arr[i].name+"</td><td>"+arr[i].marks+"</td><td>"+arr[i].city+"</td></tr>"
+            }
+            tb1.innerHTML=str;
+
+        }
+
+
+       
+        
+        function funOver(){
+
+        }
+
     
+
+
+    </script>
 </body>
 </html>
